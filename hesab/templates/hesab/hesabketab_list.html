@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>لیست تراکنش‌ها</title>
+</head>
+<body>
+    <h1>لیست تراکنش‌ها</h1>
+    <ul>
+        {% for transaction in transactions %}
+            <li>{{ transaction.date }} - {{ transaction.title }} - {{ transaction.get_transaction_type_display }} - {{ transaction.amount }}</li>
+        {% empty %}
+            <li>تراکنشی موجود نیست.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
